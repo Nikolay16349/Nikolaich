@@ -1,11 +1,13 @@
-/* Отключаем зум и прокрутку */
+/* Отключаем прокрутку и зум */
 html, body {
     width: 100%;
     height: 100%;
     overflow: hidden; /* Убираем прокрутку */
-    touch-action: none; /* Отключаем зум */
+    touch-action: none; /* Отключаем жесты */
     user-select: none; /* Запрещаем выделение */
     -webkit-user-drag: none; /* Отключаем перетаскивание */
+    -webkit-touch-callout: none; /* Отключаем контекстное меню */
+    -webkit-tap-highlight-color: transparent; /* Убираем подсветку нажатий */
 }
 
 /* Основные стили */
