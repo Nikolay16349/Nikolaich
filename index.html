@@ -4,59 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Шишка</title>
-  <!-- Можно оставить подключение внешнего файла, если понадобится -->
+  <!-- Подключение внешнего файла стилей, если нужно -->
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <style>
-    /* Задаём фон с лесом и голубым оверлеем */
+    /* Пример базовых стилей для отладки */
     body {
       margin: 0;
       padding: 0;
-      background-image: url('<img id="pinecone" src="https://cdn.pixabay.com/photo/2014/04/03/10/32/pine-cone-312202_960_720.png" alt="Пиховая шишка" onclick="clickPinecone()">');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
+      background: #e0f7ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-      font-family: Arial, sans-serif;
-      color: #fff;
+      height: 100vh;
     }
-    /* Голубой оверлей для создания холодной атмосферы */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 100, 200, 0.5);
-      z-index: 0;
-    }
-    /* Контейнер с контентом */
     .container {
-      position: relative;
-      z-index: 1;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
       padding: 20px;
-      text-align: center;
-      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-    /* Заголовок */
     h1 {
-      margin-bottom: 20px;
       font-size: 32px;
       color: #0077cc;
+      margin-bottom: 20px;
     }
-    /* Счётчик */
     #score {
       font-size: 24px;
-      margin-bottom: 20px;
       color: #005599;
+      margin-bottom: 20px;
     }
-    /* Изображение шишки */
     #pinecone {
       width: 150px;
       cursor: pointer;
