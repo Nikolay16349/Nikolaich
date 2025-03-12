@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Шишка - Кликер</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"> <!-- Подключаем стили -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script> <!-- Подключаем Telegram API -->
 </head>
 <body>
   <div class="container">
@@ -31,6 +32,13 @@
     }
 
     window.addEventListener("load", updateScore);
+
+    // Отключаем масштабирование в Telegram
+    if (window.Telegram && Telegram.WebApp) {
+      Telegram.WebApp.expand(); // Разворачиваем на весь экран
+      document.addEventListener('gesturestart', function (e) { e.preventDefault(); });
+      document.addEventListener('dblclick', function (e) { e.preventDefault(); });
+    }
   </script>
 </body>
 </html>
