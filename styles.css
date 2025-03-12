@@ -1,61 +1,74 @@
-/* Общие стили для body */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Делаем сайт статичным */
-    overflow: hidden; /* Убираем прокрутку */
-    touch-action: none; /* Блокируем жесты зума */
-    touch-action: manipulation; /* Запрещаем двойное нажатие для увеличения */
-}
-
-/* Контейнер */
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Заголовок */
-h1 {
-    font-size: 24px;
-    color: #d35400;
-}
-
-/* Счётчик */
-#score {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding: 10px;
-    background: #ffccbc;
-    border-radius: 8px;
-    display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Сосиска */
-#sausage {
-    width: 150px;
-    cursor: pointer;
-    transition: transform 0.1s, filter 0.3s;
-}
-#sausage:hover {
-    filter: brightness(1.2);
-}
-
-/* Делаем сайт статичным */
+/* Отключаем зум и прокрутку */
 html, body {
     width: 100%;
     height: 100%;
     overflow: hidden; /* Убираем прокрутку */
-    touch-action: none; /* Блокируем жесты зума */
+    touch-action: none; /* Отключаем зум */
+    user-select: none; /* Запрещаем выделение */
+    -webkit-user-drag: none; /* Отключаем перетаскивание */
+}
+
+/* Основные стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cinzel', serif;
+    background: url('https://img.freepik.com/free-photo/mysterious-winter-landscape-majestic-mountains-winter-magical-winter-snow-covered-tree_146671-13874.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #004400;
+    color: #ffffff;
+}
+
+/* Затемнение фона */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 50, 50, 0.3);
+    z-index: -1;
+}
+
+/* Контейнер */
+.container {
+    text-align: center;
+    padding: 20px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #003366;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Счётчик */
+#score {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #002244;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Шишка */
+#pinecone {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+#pinecone:hover {
+    filter: brightness(1.1);
+}
+#pinecone:active {
+    transform: scale(0.9);
 }
