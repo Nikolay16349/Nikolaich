@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 /* Контейнер */
 .container {
     background: white;
@@ -18,13 +17,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 /* Заголовок */
 h1 {
     font-size: 24px;
     color: #d35400;
 }
-
 /* Счётчик */
 #score {
     font-size: 28px;
@@ -36,14 +33,12 @@ h1 {
     display: inline-block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 /* Сосиска */
 #sausage {
     width: 150px;
     cursor: pointer;
     transition: transform 0.1s, filter 0.3s;
 }
-
 #sausage:hover {
     filter: brightness(1.2);
 }
