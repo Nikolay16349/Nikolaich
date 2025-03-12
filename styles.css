@@ -1,0 +1,49 @@
+/* Фон с градиентом */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок */
+h1 {
+    font-size: 24px;
+    color: #d35400;
+}
+
+/* Счётчик */
+#score {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #ffccbc;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Сосиска */
+#sausage {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.3s;
+}
+
+#sausage:hover {
+    filter: brightness(1.2);
+}
