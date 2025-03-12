@@ -1,53 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сосисочный кликер</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключаем стили -->
-
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сосисочный кликер</title>
+  <!-- Подключаем внешний файл стилей -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Если хочешь временно добавить инлайн-стили для теста, можно так: -->
+  <!-- <style>
     body { background: red !important; }
-</style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        #score {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        #sausage {
-            width: 150px;
-            cursor: pointer;
-            transition: transform 0.1s;
-        }
-        #sausage:active {
-            transform: scale(0.9);
-        }
-    </style>
+  </style> -->
 </head>
 <body>
-    <div class="container">
-        <h1>Сосисочный кликер</h1>
-        <p id="score">Счёт: 0</p>
-        <img id="sausage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Sausage.png/320px-Sausage.png" alt="Сосиска" onclick="clickSausage()">
-    </div>
-</body>
+  <div class="container">
     <h1>Сосисочный кликер</h1>
     <p id="score">Счёт: 0</p>
-    
     <img id="sausage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Sausage.png/320px-Sausage.png" alt="Сосиска" onclick="clickSausage()">
-    
-    <script>
-        let score = 0;
+  </div>
 
-        function clickSausage() {
-            score++;
-            document.getElementById("score").innerText = "Счёт: " + score;
-        }
-    </script>
+  <script>
+    let score = 0;
 
+    function clickSausage() {
+      score++;
+      document.getElementById("score").innerText = "Счёт: " + score;
+    }
+  </script>
 </body>
 </html>
