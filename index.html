@@ -2,41 +2,58 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Шишка</title>
-  <!-- Подключение внешнего файла стилей, если нужно -->
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Шишка - Кликер</title>
+  <!-- Подключаем красивый шрифт из Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Пример базовых стилей для отладки */
+    /* Общие стили для body */
     body {
       margin: 0;
       padding: 0;
-      background: #e0f7ff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Cinzel', serif;
+      background: url('https://images.unsplash.com/photo-1614066087803-6fa8f2431c9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
     }
+    /* Голубой оверлей для холодной атмосферы */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 150, 200, 0.4);
+      z-index: -1;
+    }
+    /* Контейнер для контента с объёмным эффектом */
     .container {
-      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
     }
+    /* Заголовок */
     h1 {
-      font-size: 32px;
-      color: #0077cc;
+      font-size: 48px;
       margin-bottom: 20px;
+      color: #003366;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
+    /* Счётчик */
     #score {
-      font-size: 24px;
-      color: #005599;
+      font-size: 32px;
       margin-bottom: 20px;
+      color: #002244;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
+    /* Стили для изображения шишки */
     #pinecone {
-      width: 150px;
+      width: 200px;
       cursor: pointer;
       transition: transform 0.1s, filter 0.3s;
     }
@@ -52,14 +69,29 @@
   <div class="container">
     <h1>Шишка</h1>
     <p id="score">Счёт: 0</p>
-    <img id="pinecone" src="pinecone.jpg" alt="Пиховая шишка" onclick="clickPinecone()">
+    <!-- Используем внешнюю картинку шишки с Pixabay -->
+    <img id="pinecone" src="https://cdn.pixabay.com/photo/2014/04/03/10/32/pine-cone-312202_960_720.png" alt="Пиховая шишка" onclick="clickPinecone()">
   </div>
-  
+
   <script>
-    let score = 0;
+    // Получаем элемент для отображения счёта
+    const scoreElement = document.getElementById('score');
+    // Загружаем сохранённый счёт из localStorage, если он существует
+    let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+    
+    // Функция для обновления счётчика и сохранения значения
+    function updateScore() {
+      scoreElement.innerText = "Счёт: " + score;
+      localStorage.setItem('score', score);
+    }
+    
+    // Инициализация счёта при загрузке страницы
+    updateScore();
+    
+    // Функция обработки клика по шишке
     function clickPinecone() {
       score++;
-      document.getElementById("score").innerText = "Счёт: " + score;
+      updateScore();
     }
   </script>
 </body>
